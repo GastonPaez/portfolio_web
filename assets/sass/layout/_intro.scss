@@ -1,0 +1,29 @@
+
+
+/* home */
+
+	#home {
+		background-attachment: fixed;
+		background-image: url('images/home.svg');
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+
+		p {
+			font-size: 1.25em;
+
+			@include breakpoint('<=medium') {
+				br {
+					display: none;
+				}
+			}
+
+			@include breakpoint('<=small') {
+				font-size: 1em;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			background-attachment: scroll;
+		}
+	}
