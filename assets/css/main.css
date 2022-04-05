@@ -3241,13 +3241,11 @@ input, select, textarea {
 		.wrapper.style1 {
 			/*1section*/
 			
-			background: url(/assets/css/images/wallp1.png);
+			background: url(./images/wallp1.png);		
 			
-				
-			
-  			
 			
 		}
+	
 
 		.wrapper.style1-alt {
 			
