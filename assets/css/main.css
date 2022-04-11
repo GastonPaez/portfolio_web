@@ -68,6 +68,46 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+.home_name {
+	text-align: center;
+	font-size: 4rem;
+}
+.home_range {
+	text-align: center;
+	font-size: 3rem;
+}
+.wrappertext {
+	display: flex;
+	flex-direction: column;
+    height: 100vh;
+    /*This part is important for centering*/    
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+  }
+  
+  .typing-demo1 {
+    width: 22ch;
+    animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;   
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 40px;
+}
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
 
 /* Basic */
 
