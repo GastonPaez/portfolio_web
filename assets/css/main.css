@@ -2483,7 +2483,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #ffffff;
-			color: #b74e91;
+			color:#4eb7b7;
 			content: '\f00c';
 		}
 
@@ -3904,7 +3904,7 @@ input, select, textarea {
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #b74e91;
+							background-color: #4eb7b7;
 						}
 
 		}
