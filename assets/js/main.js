@@ -1,186 +1,151 @@
+/* =================================================================
+   GASTÓN PÁEZ · PORTFOLIO — interacciones
+   ================================================================= */
+(function () {
+  "use strict";
 
+  /* ---------- Carga / reveal inicial del hero ---------- */
+  window.addEventListener("load", function () {
+    document.body.classList.remove("is-loading");
+    document.body.classList.add("is-loaded");
+  });
+  // Fallback por si 'load' tarda
+  setTimeout(function () {
+    document.body.classList.add("is-loaded");
+  }, 700);
 
-(function($) {
+  /* ---------- Año del footer ---------- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-	var	$window = $(window),
-		$body = $('body'),
-		$sidebar = $('#sidebar');
+  /* ---------- Navbar: estado al hacer scroll ---------- */
+  var topbar = document.querySelector(".topbar");
+  function onScroll() {
+    if (window.scrollY > 40) topbar.classList.add("is-stuck");
+    else topbar.classList.remove("is-stuck");
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+  /* ---------- Menú móvil ---------- */
+  var toggle = document.querySelector(".nav-toggle");
+  var drawer = document.querySelector(".drawer");
+  if (toggle && drawer) {
+    toggle.addEventListener("click", function () {
+      var open = drawer.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    drawer.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        drawer.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 
-	// Hack: Enable IE flexbox workarounds.
-		if (browser.name == 'ie')
-			$body.addClass('is-ie');
+  /* ---------- Scroll reveal con IntersectionObserver ---------- */
+  var revealEls = document.querySelectorAll(".reveal-up");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in-view"); });
+  }
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+  /* ---------- Cursor personalizado ---------- */
+  var canHover = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+  if (canHover) {
+    var ring = document.querySelector(".cursor");
+    var dot = document.querySelector(".cursor-dot");
+    var rx = window.innerWidth / 2, ry = window.innerHeight / 2;
+    var dx = rx, dy = ry;
 
-	// Forms.
+    document.addEventListener("mousemove", function (e) {
+      dx = e.clientX; dy = e.clientY;
+      dot.style.transform = "translate(" + dx + "px," + dy + "px) translate(-50%,-50%)";
+    });
 
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
+    (function loop() {
+      rx += (dx - rx) * 0.18;
+      ry += (dy - ry) * 0.18;
+      ring.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%,-50%)";
+      requestAnimationFrame(loop);
+    })();
 
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
+    // Estados según data-cursor
+    document.querySelectorAll("[data-cursor]").forEach(function (el) {
+      var type = el.getAttribute("data-cursor");
+      el.addEventListener("mouseenter", function () {
+        ring.classList.add(type === "view" ? "is-view" : "is-hover");
+      });
+      el.addEventListener("mouseleave", function () {
+        ring.classList.remove("is-hover", "is-view");
+      });
+    });
 
-				// Submit form.
-					$(this).parents('form').submit();
+    document.addEventListener("mouseleave", function () {
+      ring.style.opacity = "0"; dot.style.opacity = "0";
+    });
+    document.addEventListener("mouseenter", function () {
+      ring.style.opacity = "1"; dot.style.opacity = "1";
+    });
+  }
 
-			});
+  /* ---------- Formulario (Formspree, sin recargar) ---------- */
+  var form = document.querySelector(".contact-form");
+  if (form) {
+    var status = form.querySelector(".form-status");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      status.className = "form-status";
+      status.textContent = "Enviando…";
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            status.classList.add("ok");
+            status.textContent = "Mensaje enviado. ¡Gracias!";
+          } else {
+            status.classList.add("err");
+            status.textContent = "Hubo un problema. Probá por correo.";
+          }
+        })
+        .catch(function () {
+          status.classList.add("err");
+          status.textContent = "Sin conexión. Escribime por correo.";
+        });
+    });
+  }
 
-	// Sidebar.
-		if ($sidebar.length > 0) {
-
-			var $sidebar_a = $sidebar.find('a');
-
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
-
-					var $this = $(this);
-
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
-
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
-
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
-
-				})
-				.each(function() {
-
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
-
-					// No section for this link? Bail.
-						if ($section.length < 1)
-							return;
-
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
-
-								// Deactivate section.
-									$section.addClass('inactive');
-
-							},
-							enter: function() {
-
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
-							}
-						});
-
-				});
-
-		}
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
-
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
-						return $sidebar.height();
-
-				return 0;
-
-			}
-		});
-
-	// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide <img>.
-					$img.hide();
-
-			});
-
-	// Features.
-		$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			});
-
-})(jQuery);
+  /* ---------- Smooth scroll para anclas internas ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var id = a.getAttribute("href");
+      if (id.length > 1) {
+        var target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+})();

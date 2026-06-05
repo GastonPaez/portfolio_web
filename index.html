@@ -1,411 +1,421 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gastón Paez — Backend Python</title>
+<meta name="description" content="Portfolio de Gastón Paez, desarrollador web Front-End & Back-End. Python, Django, JavaScript, Angular y más." />
 
-<html>
-	<head>
-		<title>Gaston Paez - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">	
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!-- Open Graph -->
+<meta property="og:title" content="Gastón Paez — Desarrollador de Aplicaciones & Web" />
+<meta property="og:description" content="Front-End & Back-End. Python · Django · JavaScript · Angular." />
+<meta property="og:type" content="website" />
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#home">Inicio</a></li>
-							<li><a href="#two">Sobre Mi</a></li>
-							<li><a href="#one">Portfolio</a></li>
-							<li><a href="#three">Contacto</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Marcellus&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-				<!-- home -->
-					<section id="home" class="wrapper style1 fullscreen fade-up">
-						<div class="inner wrappertext">
-							<h1 class="home_name">Soy Gaston Paez</h1>
-							<h1 class="home_range">Desarrollador Web</h2>
-							<h1 class="typing-demo1">Front-End & Back-End</h3>
-							<ul class="actions">
-								<li><a href="#two" class="button scrolly">Conocer mas</a></li>
-							</ul>
-						</div>
-					</section>
+<body class="is-loading">
 
-				<!-- Two -->
-				<section id="two" class="wrapper style3 fade-up">
-					<div class="inner">
-						<h2>Conocimientos Tecnicos y Habilidades</h2>
-						<p></p>
-						<div class="features">
-							<section>
-								<span class="icon solid major fa-code"></span>
-								<h3>Desarrollo Front-End</h3>
-								<p>HTML <br>
-									CSS Grid & Flexbox<br>
-									Bootstrap <br>
-									JavaScript<br>
-									Responsive Web Desing<br>
-									TypeScript <br>
-									Angular <br>
-									Programas: <br>
-									- Visual Studio Code <br>- Photoshop <br>- Illustrator <br>
-									Git & Git-Hub
-						
-									
+<!-- Grano / textura sobre todo el sitio -->
+<div class="grain" aria-hidden="true"></div>
+<!-- Cursor personalizado -->
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
 
-								</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-lock"></span>
-								<h3>Desarrollo Back-End</h3>
-								<p>
-									Python <br>
-									- POO MVC MTV <br>									
-									- Api, Rest, Restful & Soap <br>									
-									Base de Datos: <br>
-									- MySQL <br>
-									- PostgreSQL <br>
-									- Mongo <br>
-									- ORM <br>									
-									Framework: <br>
-									- Django <br>
-									- Flask <br>									
-									- Fastapi <br>
-									Java<br>								
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <a href="#home" class="brand" data-cursor="link">
+    <span class="brand-mono">GP</span>
+    <span class="brand-rule" aria-hidden="true"></span>
+  </a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#about" data-cursor="link"><i>01</i> Sobre mí</a>
+    <a href="#work" data-cursor="link"><i>02</i> Obra</a>
+    <a href="#contact" data-cursor="link"><i>03</i> Contacto</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
 
-								</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-cog"></span>
-								<h3>Extra</h3>							
-								<p>
-								Aplicaciones de escritorio: <br>
-								- Tkinter <br>
-								- Pyqt5 <br>
-								Web scraping: <br>
-								- Scrapy <br>
-								- Beautiful Soup <br>
-								</p>
-								
-							</section>
-							<section>
-								<span class="icon solid major fa-desktop"></span>
-								<h3>Consolas y Monitoreo</h3>
-								<p>
-									Aplicaciones de escritorio: <br>
-									- Bash <br>
-									- Powershell 5 & 7 <br>
-									Monitoreo & Logs: <br>
-									- Elastic Kibana <br>
-									- Putty <br>
-									- Glogg <br>									
-								</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-link"></span>
-								<h3>Capacitaciones</h3>
-								<p>
-									Diplomatura Python - UTN <br>
-									Python Avanzado – Educación IT <br>
-									Argentina Programa - Gob. Arg. <br>
-									Micro-Modulo BIG DATA – UTN<br>
-      								Big Data & Análisis de Datos <br>
-									ISPC - Tecnicatura Programación <br>
-									Alura Oracle - Full Stack Java <br>
-								</p>
+<!-- Menú móvil -->
+<div class="drawer" aria-hidden="true">
+  <a href="#about"><i>01</i> Sobre mí</a>
+  <a href="#work"><i>02</i> Obra</a>
+  <a href="#contact"><i>03</i> Contacto</a>
+</div>
 
-							</section>
-							<section>
-								<span class="icon major fa-gem"></span>
-								<h3>Cursos On-Line</h3>
-								<p>
-									
-									Microsoft Learn - Python <br>
-									Cisco - Programming Essentials in Python <br>										
-									Responsive Web Design <br>
-									Javascript Algorithms and Data Structures <br>																	
-									SQL desde cero - Jairo Galeas <br>
-									Univ Python 2021 - Global Mentoring <br>
-									Excel Tabla Dinamicas -Javier Gomez <br>
-									GIT de cero a experto - Maximiliano Burgos <br>
-									Platzi: <br>
-									Git & Git-Hub, Desarrollo web, Scrapy, MySql	
-																	
+<main>
 
-								</p>
-							</section>
-							
-							
-						</div>
-						
-						<ul class="actions">
-							<li><a href="./assets/cv/Gaston_Paez_CV _canvaregular.pdf" class="button">Ver CV Online</a></li>
-							<li><a href="./assets/cv/Gaston_Paez_CV _canvaregular.pdf" class="button">Descargar CV PDF</a></li>
-							<li><a href="https://github.com/GastonPaez/Certificaciones" class="button">Certificaciones</a></li>
-						</ul>
-					</div>
-				</section>
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="hero-frame" aria-hidden="true"></div>
+    <span class="hero-side hero-side--l" aria-hidden="true">PORTFOLIO · WEB</span>
+    <span class="hero-side hero-side--r" aria-hidden="true">BUENOS AIRES · ARGENTINA</span>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="https://encuestapp.pythonanywhere.com/" class="image"><img src="./assets/css/images/encuestapp.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Encuestadora de Elecciones</h2>
-									<p>Aplicacion para censar candidatos electorales, con dashboard informativo con datos relevantes, desarrollado en Python Flask</p>
-									<ul class="actions">
-										<li><a href="https://encuestapp.pythonanywhere.com/" class="button">Ir a la web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://epark.pythonanywhere.com/" class="image"><img src="./assets/css/images/epark.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>NoCountry Epark</h2>
-									<p>Plataforma para reserva de estacionamiento privado <br>
-									Backend en Django con api google maps, Front en html css y bootstrap <br></p>
-									<ul class="actions">
-										<li><a href="https://epark.pythonanywhere.com/" class="button">Ir a la web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://prediccion-acciones.onrender.com/" class="image"><img src="./assets/css/images/pred_fin.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Predicciones Financieras</h2>
-									<p>Webapp para buscar una acción y visualizar sencillamente su precio actual junto a sus gráficos diario y mensual, utilizando datos en tiempo real.</p>
-									<ul class="actions">
-										<li><a href="https://prediccion-acciones.onrender.com/" class="button">Ir a la web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://github.com/GastonPaez/mkDistribuidoraStore" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>E-Commerce Ropa Interior</h2>
-									<p>Backend realizado en django, base de datos MySql, Interfaz de Registro y Login, Catalogo de productos, Carrito de Compras, Direcciones, Generador de orden de pago y Pago. 	<br>Front realizado en HTML CSS y Bootstrap </p>
-									<ul class="actions">
-										<li><a href="https://github.com/GastonPaez/mkDistribuidoraStore" class="button">Ir a la web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://gastonpaez.github.io/web_score_scraping/" class="image"><img src="assets/css/images/scrapy_score.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Extracción de datos Scrapy Tabla Posiciones</h2>
-									<p>Pagina web de extracción de datos actualizados sobre tabla de puntaje de fútbol argentino. Trabajada con scrapy, se realizo un spider en Zyte para que recupere los datos acuatizados en cada ingreso.</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/web_score_scraping/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>						
-						<section>
-							<a href="https://gastonpaez.github.io/landing_page/" class="image"><img src="assets/css/images/blender_1.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Web Curso de Blender</h2>
-									<p>Landing Page acerca de una capacitación en Blender. Trabajado en Grid y Flexbox. Botones de acción y sliders en JavaScript.</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/landing_page/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://gastonpaez.github.io/dino_web/" class="image"><img src="assets/css/images/dinoweb.gif" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Dino Web</h2>
-									<p>Landing Page sobre Dinosaurios. Utilización de efecto parallax en banner y galería con efecto y vista previa lightbox. Gif editado en adobe Premiere y transparentado en Photoshop como secuencia png. Uso de Grid y Flexbox. Footer fixed.</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/dino_web/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						
-						<section>
-							<a href="https://gastonpaez.github.io/challengeonecodificador2/" class="image"><img src="assets/css/images/alura_encript.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Desencriptador Alura</h2>
-									<p>Pagina web para encriptar y desencriptar palabras secretas.
-										Desafio challenge Alura</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/challengeonecodificador2/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://gastonpaez.github.io/ChallengeFrontend_2" class="image"><img src="assets/css/images/alura_ecommerce.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Alura E-Commerce</h2>
-									<p>Pagina Web Ecommerce <br>
-										Challenge frontend #2 Alura</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/ChallengeFrontend_2" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://gastonpaez.github.io/Challenge_frontend_1/" class="image"><img src="assets/css/images/alura_cv.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Alura Challenge CV</h2>
-									<p>CV challenge frontend #1 Alura</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/Challenge_frontend_1/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+    <div class="hero-inner">
+      <p class="eyebrow reveal" data-delay="1">Desarrollador Backend Python</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="line-in">Gastón</span></span>
+        <span class="line line--italic"><span class="line-in">Paez</span></span>
+      </h1>
+      <div class="hero-rule reveal" data-delay="5" aria-hidden="true">
+        <span class="diamond"></span>
+      </div>
+      <p class="hero-lead reveal" data-delay="6">
+        Construyo soluciones <em>digitales</em> que cumplen con las <em>expectativas</em> y generan <em>impacto real</em>.
+      </p>
+      <div class="hero-actions reveal" data-delay="7">
+        <a href="#work" class="btn btn--solid" data-cursor="link">Ver obras</a>
+        <a href="#contact" class="btn btn--ghost" data-cursor="link">Contactar</a>
+      </div>
+    </div>
 
-						<section>
-							<a href="https://gastonpaez.github.io/fix_phone-site/" class="image"><img src="assets/css/images/fix_phone_1.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Web Venta y Reparación Movil</h2>
-									<p>Web sobre venta y soporte técnico de celulares y dispositivos electrónicos. Uso de cards y efectos ondulantes sobre imágenes. </p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/fix_phone-site/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="https://gastonpaez.github.io/bluered_the_store/" class="image"><img src="assets/css/images/bluered_thestore.png" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Pagina Accesorios y Fundas Personalizadas</h2>
-									<p>Venta de fundas y accesorios móviles. Basada en la herramienta Bootstrap, uso de cards, carousel, forms, button.</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/bluered_the_store/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>							
-							<a href="#" class="image"><img class="web_cia" src="assets/css/images/web2-1.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Informes Desclasificados CIA</h2>
-									<p>Scrapping a CIA website con Librería Scrapy de Python <br>
-									Spider alojado en nube ScrapingHub mediante archivo Json <br>
-									La web obtiene datos de manera actualizada y remota. En caso de falla obtiene Json local.
-									</p>
-									<ul class="actions">
-										<li><a href="https://gastonpaez.github.io/scrapy-intelligence-agency/" class="button">Ir a la Web</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						
-					</section>
+    <a href="#about" class="scroll-cue reveal" data-delay="8" data-cursor="link" aria-label="Desplazar">
+      <span>Descender</span>
+      <span class="scroll-line" aria-hidden="true"></span>
+    </a>
+  </section>
 
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><span class="dot">◆</span><span>Django</span><span class="dot">◆</span>
+      <span>JavaScript</span><span class="dot">◆</span><span>Angular</span><span class="dot">◆</span>
+      <span>FastAPI</span><span class="dot">◆</span><span>PostgreSQL</span><span class="dot">◆</span>
+      <span>TypeScript</span><span class="dot">◆</span><span>Scrapy</span><span class="dot">◆</span>
+      <span>Flask</span><span class="dot">◆</span><span>Java</span><span class="dot">◆</span>
+      <span>Python</span><span class="dot">◆</span><span>Django</span><span class="dot">◆</span>
+      <span>JavaScript</span><span class="dot">◆</span><span>Angular</span><span class="dot">◆</span>
+      <span>FastAPI</span><span class="dot">◆</span><span>PostgreSQL</span><span class="dot">◆</span>
+      <span>TypeScript</span><span class="dot">◆</span><span>Scrapy</span><span class="dot">◆</span>
+      <span>Flask</span><span class="dot">◆</span><span>Java</span><span class="dot">◆</span>
+    </div>
+  </div>
 
+  <!-- ============ ABOUT / SKILLS ============ -->
+  <section id="about" class="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title reveal-up">Conocimientos<br><span class="ital">&amp; oficio</span></h2>
+      <p class="section-note reveal-up" data-delay="2">
+        Un repertorio técnico cultivado entre la disciplina del back-end
+        y la sensibilidad del front-end.
+      </p>
+    </div>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contáctame</h2>
-							
-							<div class="split style1">
-								<section>
-									<form action="https://formspree.io/f/xzboawor"
-									method="POST">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Nombre</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Mensaje</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit" type="submit" >Enviar</a></li>											
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact" style="color: #fff;">
-										<li>
-											<h3><span class="icon solid alt fa-home"></span>  Dirección</h3>
-											<span>Buenos Aires<br />
-											Argentina<br />
-											</span>
-										</li>
-										<li>
-											
-											<h3><span class="icon solid alt fa-envelope"></span>  Email</h3>
-											<a href="#">paez.gastonm@gmail.com</a>
-										</li>
-										<li>
-											<h3><span class="icon solid alt fa-phone"></span>  Teléfono</h3>
-											<span>+54(011)3262-6937</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">												
-												<li><a href="https://github.com/GastonPaez" class="icon brands fa-github"><span class="label">GitHub</span></a></li>												
-												<li><a href="www.linkedin.com/in/gp-dev" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+    <div class="skills">
+      
+      <article class="skill reveal-up">
+        <header><span class="skill-no">ii</span><h3>Back-End</h3></header>
+        <ul>
+          <li>Python · POO / MVC / MTV</li><li>Django · Flask · FastAPI</li>
+          <li>API REST · RESTful · SOAP</li><li>MySQL · PostgreSQL</li>
+          <li>MongoDB · ORM</li><li>Java</li>
+        </ul>
+      </article>
+      
+      <article class="skill reveal-up" data-delay="1">
+        <header><span class="skill-no">i</span><h3>Front-End</h3></header>
+        <ul>
+          <li>HTML5</li><li>CSS · Grid &amp; Flexbox</li><li>JavaScript</li>
+          <li>TypeScript</li><li>Angular</li><li>Bootstrap</li>
+          <li>Responsive Design</li><li>Git &amp; GitHub</li>
+          <li>Photoshop · Illustrator</li>
+        </ul>
+      </article>
+      
+      <article class="skill reveal-up" data-delay="2">
+        <header><span class="skill-no">iv</span><h3>Consola &amp; Monitoreo</h3></header>
+        <ul>
+          <li>Bash</li><li>PowerShell 5 &amp; 7</li>
+          <li>Elastic Kibana</li><li>Putty · Glogg</li>
+          <li>Vim</li>
+        </ul>
+      </article>
 
-			</div>
+      <article class="skill reveal-up" data-delay="3">
+        <header><span class="skill-no">vii</span><h3>IA &amp; LLMs</h3></header>
+        <ul>
+          <li>Claude · Copilot</li>
+          <li>Gemini · ChatGPT</li>
+          <li>Prompt Engineering</li>
+          <li>Integración de APIs · Anthropic &amp; OpenAI</li>
+          <li>Agentes · Function Calling / Tool Use</li>
+          <li>Diseño de Skills</li>          
+        </ul>
+      </article>     
+      
+      <article class="skill reveal-up" data-delay="4">
+        <header><span class="skill-no">v</span><h3>Formación</h3></header>
+        <ul>
+          <li>Diplomatura Python | UTN</li>
+          <li>Python Avanzado | Educación IT</li>
+          <li>Argentina Programa</li>
+          <li>Big Data | UTN</li>
+          <li>Tecnicatura Programación | ISPC</li>
+          <li>Google cloud engineer | Google</li>
+          <li>Full Stack Java | Alura-Oracle</li>
+        </ul>
+      </article>
+      
+      <article class="skill reveal-up" data-delay="5">
+        <header><span class="skill-no">vi</span><h3>Cursos</h3></header>
+        <ul>
+          <li>Microsoft Learn | Python</li><li>Cisco | Programming Essentials</li>
+          <li>freeCodeCamp : <br>
+          - Responsive Web Design <br>- Javascript Algorithms and Data Structures</li>
+          <li>SQL desde cero | Jairo Galeas</li>
+          <li>GIT de cero a experto | M. Burgos</li>
+          <li>Platzi:  <br>  
+            Git · Scrapy · MySQL</li>
+        </ul>
+      </article>
+      
+      <article class="skill reveal-up" data-delay="6">
+        <header><span class="skill-no">iii</span><h3>Extra</h3></header>
+        <ul>
+          <li>Tkinter · PyQt5</li><li>Web Scraping</li>
+          <li>Scrapy · Beautiful Soup</li>
+          <li>Yfinance · Pandas</li>
+        </ul>
+      </article>
+    </div>
+    
+    <div class="about-cta reveal-up">
+      <a href="https://github.com/GastonPaez/Certificaciones" class="btn btn--ghost" target="_blank" rel="noopener" data-cursor="link">Certificaciones</a>
+      <a href="assets/cv/Gaston_Paez_CV.pdf" class="btn btn--solid" data-cursor="link">Descargar CV</a>
+    </div>
+  </section>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+  <!-- ============ WORK ============ -->
+  <section id="work" class="work">
+    <div class="section-head section-head--work">
+      <span class="section-num">02</span>
+      <h2 class="section-title reveal-up">Obra<br><span class="ital">selecta</span></h2>
+      <p class="section-note reveal-up" data-delay="2">
+        Trece piezas entre aplicaciones full-stack, scraping de datos
+        y landings de autor.
+      </p>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <div class="gallery">
+      <!-- 01 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://encuestapp.pythonanywhere.com/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Flask · Python"><span class="plate-mark">01</span></div>
+          <div class="piece-meta">
+            <h3>Encuestadora de Elecciones</h3>
+            <p>App para censar candidatos electorales con dashboard informativo. Desarrollada en Python · Flask.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 02 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://epark.pythonanywhere.com/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Django · Maps API"><span class="plate-mark">02</span></div>
+          <div class="piece-meta">
+            <h3>NoCountry · Epark</h3>
+            <p>Plataforma de reserva de estacionamiento privado. Back-end Django con Google Maps API; front en HTML, CSS y Bootstrap.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 03 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://prediccion-acciones.onrender.com/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Data · Realtime"><span class="plate-mark">03</span></div>
+          <div class="piece-meta">
+            <h3>Predicciones Financieras</h3>
+            <p>Webapp para buscar una acción y visualizar su precio actual con gráficos diario y mensual usando datos en tiempo real.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 04 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://github.com/GastonPaez/mkDistribuidoraStore" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Django · MySQL"><span class="plate-mark">04</span></div>
+          <div class="piece-meta">
+            <h3>E-Commerce Indumentaria</h3>
+            <p>Back-end Django con MySQL: registro y login, catálogo, carrito, direcciones, órdenes y pago. Front en HTML, CSS y Bootstrap.</p>
+            <span class="piece-link">Ver repositorio →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 05 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/web_score_scraping/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Scrapy · Zyte"><span class="plate-mark">05</span></div>
+          <div class="piece-meta">
+            <h3>Scraping · Tabla de Posiciones</h3>
+            <p>Extracción de datos actualizados de la tabla del fútbol argentino. Spider en Zyte que recupera la información en cada ingreso.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 06 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/landing_page/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Grid · JS"><span class="plate-mark">06</span></div>
+          <div class="piece-meta">
+            <h3>Curso de Blender</h3>
+            <p>Landing page de una capacitación en Blender. Trabajada en Grid y Flexbox con botones y sliders en JavaScript.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 07 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/dino_web/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Parallax · Lightbox"><span class="plate-mark">07</span></div>
+          <div class="piece-meta">
+            <h3>Dino Web</h3>
+            <p>Landing sobre dinosaurios con efecto parallax y galería lightbox. GIF editado en Premiere y transparentado en Photoshop.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 08 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/challengeonecodificador2/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Challenge · Alura"><span class="plate-mark">08</span></div>
+          <div class="piece-meta">
+            <h3>Desencriptador Alura</h3>
+            <p>Página para encriptar y desencriptar palabras secretas. Desafío Challenge de Alura.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 09 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/ChallengeFrontend_2" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Front-End"><span class="plate-mark">09</span></div>
+          <div class="piece-meta">
+            <h3>Alura · E-Commerce</h3>
+            <p>Página web de e-commerce. Challenge front-end #2 de Alura.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 10 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/Challenge_frontend_1/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Front-End"><span class="plate-mark">10</span></div>
+          <div class="piece-meta">
+            <h3>Alura · CV</h3>
+            <p>Currículum interactivo. Challenge front-end #1 de Alura.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 11 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/fix_phone-site/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Cards · FX"><span class="plate-mark">11</span></div>
+          <div class="piece-meta">
+            <h3>Venta &amp; Reparación Móvil</h3>
+            <p>Sitio de venta y soporte técnico de celulares. Uso de cards y efectos ondulantes sobre imágenes.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 12 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/bluered_the_store/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Bootstrap"><span class="plate-mark">12</span></div>
+          <div class="piece-meta">
+            <h3>Accesorios &amp; Fundas</h3>
+            <p>Venta de fundas y accesorios móviles sobre Bootstrap: cards, carousel, forms y botones.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+      <!-- 13 -->
+      <article class="piece reveal-up" data-cursor="view">
+        <a href="https://gastonpaez.github.io/scrapy-intelligence-agency/" target="_blank" rel="noopener">
+          <div class="piece-plate" data-tag="Scrapy · Cloud"><span class="plate-mark">13</span></div>
+          <div class="piece-meta">
+            <h3>Informes Desclasificados CIA</h3>
+            <p>Scraping del sitio de la CIA con Scrapy. Spider en la nube (ScrapingHub) vía JSON, con fallback a archivo local.</p>
+            <span class="piece-link">Ir a la web →</span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
 
-	</body>
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <span class="section-num">03</span>
+        <h2 class="section-title reveal-up">Hablemos<br><span class="ital">de tu proyecto</span></h2>
+        <p class="section-note reveal-up" data-delay="2">
+          ¿Una vacante, una colaboración o una idea? Dejá tu mensaje y
+          te respondo a la brevedad.
+        </p>
+
+        <ul class="contact-list reveal-up" data-delay="3">
+          <li>
+            <span class="ci-label">Correo</span>
+            <a href="mailto:paez.gastonm@gmail.com" data-cursor="link">paez.gastonm@gmail.com</a>
+          </li>
+          <li>
+            <span class="ci-label">Teléfono</span>
+            <a href="tel:+541132626937" data-cursor="link">+54 (011) 3262-6937</a>
+          </li>
+          <li>
+            <span class="ci-label">Ubicación</span>
+            <span>Buenos Aires · Argentina</span>
+          </li>
+          <li>
+            <span class="ci-label">Redes</span>
+            <span class="ci-social">
+              <a href="https://github.com/GastonPaez" target="_blank" rel="noopener" data-cursor="link">GitHub</a>
+              <a href="https://www.linkedin.com/in/gp-dev" target="_blank" rel="noopener" data-cursor="link">LinkedIn</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal-up" data-delay="2" action="https://formspree.io/f/xzboawor" method="POST">
+        <div class="field">
+          <input type="text" name="name" id="name" required placeholder=" " />
+          <label for="name">Nombre</label>
+        </div>
+        <div class="field">
+          <input type="email" name="email" id="email" required placeholder=" " />
+          <label for="email">Correo electrónico</label>
+        </div>
+        <div class="field">
+          <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+          <label for="message">Mensaje</label>
+        </div>
+        <button type="submit" class="btn btn--solid btn--block" data-cursor="link">Enviar mensaje</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-rule" aria-hidden="true"><span class="diamond"></span></div>
+  <div class="footer-inner">
+    <span class="footer-name">Gastón Paez</span>
+    <span class="footer-meta">Desarrollador Web · Buenos Aires</span>
+    <span class="footer-copy">© <span id="year"></span> · Todos los derechos reservados</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
 </html>
